@@ -1,157 +1,109 @@
 # MedCare — Secure Healthcare Application and Analytics Platform
 
-**BCA Cloud Computing | Modular Assignment 7**  
-**AWS Region:** Europe (Stockholm), `eu-north-1`  
-**Project type:** Academic demonstration using **synthetic healthcare data**
+Modular Assignment 7 | IHC – Cloud Development  
+Author: Md Habib Ahmed  
+Region: AWS Europe (Stockholm), `eu-north-1`  
+Status: Completed academic demonstration using synthetic healthcare data; AWS resources may still incur charges.
 
-## Project overview
+MedCare is a Flask-based healthcare analytics and appointment scheduling demonstration deployed on Amazon EC2. Amazon S3 holds synthetic patient, doctor-schedule and IoT-vitals datasets; AWS Lambda integrates the data; DynamoDB persists appointment bookings and prevents double reservations. The dashboard presents processed analytics and live appointment availability. This repository contains application code, Lambda ETL, datasets, architecture, verification screenshots and the university report.
 
-MedCare is a cloud-hosted healthcare demonstration combining patient and simulated IoT-vitals analytics with a doctor appointment scheduling API. Amazon S3 stores source and processed datasets; AWS Lambda performs healthcare ETL; an Ubuntu EC2 instance hosts two Flask services behind Nginx; and Amazon DynamoDB persists appointments and prevents double booking.
+## Project contents
 
-The dashboard reads processed analytics from S3 and checks current appointment availability in DynamoDB. The Lambda-generated summary is a **point-in-time dataset snapshot**; current booking counts are obtained from DynamoDB when the dashboard is requested.
+| Location | Purpose |
+|---|---|
+| [`app/dashboard.py`](app/dashboard.py) | Flask healthcare dashboard with S3 analytics and DynamoDB booking status |
+| [`app/doctor_api.py`](app/doctor_api.py) | Protected doctor schedules and appointment booking API |
+| [`deployment/lambda/lambda_function.py`](deployment/lambda/lambda_function.py) | AWS Lambda ETL for the three raw S3 datasets |
+| [`scripts/generate_datasets.py`](scripts/generate_datasets.py) | Synthetic healthcare dataset generation |
+| [`scripts/integrate_healthcare_data.py`](scripts/integrate_healthcare_data.py) | Local healthcare integration script |
+| [`data/raw/`](data/raw/) | Synthetic patients, doctor schedules and IoT vital readings |
+| [`data/processed/`](data/processed/) | Integrated patient CSV and healthcare summary JSON |
+| [`requirements.txt`](requirements.txt) | Python dependencies |
+| [`docs/architecture/MedCare-M7-Architecture.png`](docs/architecture/MedCare-M7-Architecture.png) | Implemented AWS architecture diagram |
+| [`docs/evidence/`](docs/evidence/) | Eleven deployment, security and testing screenshots (E01–E11) |
+| [`docs/Healthcare Solution-M7-Report.docx`](docs/Healthcare%20Solution-M7-Report.docx) | Final university assignment report |
 
-## Architecture
+## Architecture and AWS configuration
 
 ![MedCare AWS architecture](docs/architecture/MedCare-M7-Architecture.png)
 
-**Implemented components**
+- **Compute:** One Ubuntu 24.04 EC2 instance hosts separate Flask dashboard and scheduling API services, managed by Gunicorn and systemd.
+- **Access:** Nginx serves HTTPS on the EC2 loopback address (`127.0.0.1:443`) through an SSH tunnel. The dashboard uses Nginx Basic Authentication; the API uses a bearer token. The certificate is self-signed, not publicly trusted.
+- **Storage:** Amazon S3 bucket `medcare-m7-healthcare-data-habib` stores raw inputs and processed ETL outputs, with SSE-S3 (`AES256`) for processed objects.
+- **ETL:** Python 3.13 Lambda function `MedCare-M7-Healthcare-ETL` reads S3 inputs, validates and integrates records, and writes processed objects back to S3.
+- **Bookings:** DynamoDB table `MedCare-M7-Appointments`, partition key `booking_key`, stores bookings with conditional writes to prevent double booking.
+- **IAM:** The EC2 role has scoped S3-read and DynamoDB access. The Lambda role is scoped to S3 input/output access; Lambda does **not** query DynamoDB.
 
-| Component | Purpose |
-|---|---|
-| Amazon EC2 (Ubuntu 24.04) | Runs dashboard and scheduling API using Gunicorn and systemd |
-| Nginx | Localhost HTTPS reverse proxy with Basic Authentication for dashboard access |
-| Amazon S3 | Stores raw healthcare inputs and processed analytics; SSE-S3 (`AES256`) |
-| AWS Lambda (Python 3.13) | Validates and integrates S3 healthcare data; writes processed outputs |
-| Amazon DynamoDB | Stores appointment bookings and enforces conditional writes |
-| AWS IAM | Scopes EC2 access to required S3/DynamoDB operations and Lambda access to S3 input/output objects |
+The dashboard reads the S3 summary and obtains current booking counts directly from DynamoDB. No ALB, ASG, multi-AZ failover or publicly trusted HTTPS endpoint was deployed.
 
-**Access boundary:** The HTTPS endpoint is bound to `127.0.0.1:443` on EC2 and accessed through an SSH tunnel. Its certificate is self-signed, not publicly trusted. The Flask/Gunicorn services listen on `127.0.0.1:8000` (dashboard) and `127.0.0.1:8001` (API). This is **not** a public-facing production deployment.
+## Application endpoints
 
-## Repository structure
+| Method | Route | Behavior |
+|---|---|---|
+| `GET` | `/` | Dashboard overview and analytics |
+| `GET` | `/health` | Service health check (local access) |
+| `GET` | `/doctors` | List doctor schedules and current availability; bearer token required |
+| `GET` | `/doctors/<doctor_id>` | View one doctor's schedule; bearer token required |
+| `POST` | `/appointments` | Create a booking with conditional DynamoDB write; bearer token required |
 
-```text
-MedCare-Healthcare-M7/
-├── app/
-│   ├── dashboard.py
-│   └── doctor_api.py
-├── data/
-│   ├── raw/
-│   │   ├── patients.csv
-│   │   ├── doctor_schedules.json
-│   │   └── iot_vitals.json
-│   └── processed/
-│       ├── integrated_patients.csv
-│       └── healthcare_summary.json
-├── deployment/
-│   └── lambda/
-│       └── lambda_function.py
-├── docs/
-│   ├── architecture/
-│   │   └── MedCare-M7-Architecture.png
-│   └── evidence/
-│       └── E01–E11 screenshots
-├── scripts/
-│   ├── generate_datasets.py
-│   └── integrate_healthcare_data.py
-├── tests/
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
+The dashboard and API run behind Nginx, with Gunicorn bound to `127.0.0.1:8000` and `127.0.0.1:8001`, respectively. A duplicate booking returns HTTP `409`.
 
-The EC2 deployment additionally uses Nginx and systemd configuration. Capture and document the **actual deployed configuration** before treating the repository as a fully reproducible deployment; do not commit certificates, private keys, API tokens or passwords.
+## Recreate the demonstration (optional; AWS charges may apply)
 
-## Data integration and analytics
+1. Generate the synthetic inputs using [`scripts/generate_datasets.py`](scripts/generate_datasets.py) and upload them to the S3 `raw/` prefix.
+2. Deploy [`deployment/lambda/lambda_function.py`](deployment/lambda/lambda_function.py) with the appropriate S3 IAM permissions, then invoke the ETL to generate `processed/` outputs.
+3. Create the DynamoDB `MedCare-M7-Appointments` table with string partition key `booking_key`.
+4. Configure an Ubuntu 24.04 EC2 instance with scoped IAM permissions, Python dependencies, and the two Flask applications under `/opt/medcare`.
+5. Configure separate Gunicorn/systemd services and Nginx localhost HTTPS reverse proxy; provide authentication secrets privately, never through Git.
+6. Access the service through an authorized SSH tunnel and repeat functional, concurrency and recovery tests.
 
-Three synthetic datasets are stored under the S3 `raw/` prefix:
+The repository records the source and tested behavior, but does not include the deployed Nginx/systemd definitions or authentication secrets. Those must be configured separately for reproduction. Do not upload private keys, certificates, passwords or API tokens.
 
-- `patients.csv`: 100 patient records.
-- `doctor_schedules.json`: 30 consultation slots across five doctors.
-- `iot_vitals.json`: 100 simulated vital-sign readings.
+## Synthetic datasets versus actual measurements
 
-The deployed Lambda function `MedCare-M7-Healthcare-ETL` reads these objects, checks for duplicate patient identifiers and unknown patient references, associates patient data with the latest vital readings, and writes:
+The inputs contain **100 synthetic patient records**, **100 simulated IoT-vitals readings** and **30 doctor consultation slots across five doctors**. They are not real clinical records. Lambda writes `processed/integrated_patients.csv` and `processed/healthcare_summary.json`; the latter is a point-in-time snapshot, not a live DynamoDB booking export.
 
-- `processed/integrated_patients.csv`
-- `processed/healthcare_summary.json`
+The results below come from application tests. They are separate from the synthetic input datasets.
 
-The dashboard displays patient counts, diagnosis distribution, appointment activity, consultation availability and recent IoT readings. **Lambda does not query DynamoDB**; the dashboard and scheduling API query it directly for live booking state.
-
-## Scheduling API
-
-The Flask scheduling API supports:
-
-| Method | Endpoint | Purpose | Authentication |
-|---|---|---|---|
-| `GET` | `/health` | Service health check | No bearer token; service is locally bound |
-| `GET` | `/doctors` | List doctor schedules and current booking state | Bearer token |
-| `GET` | `/doctors/<doctor_id>` | View one doctor's schedule | Bearer token |
-| `POST` | `/appointments` | Validate and book an available consultation slot | Bearer token |
-
-Example appointment request body:
-
-```json
-{
-  "doctor_id": "D001",
-  "slot": "2026-11-10T09:00:00",
-  "patient_id": "<registered-synthetic-patient-id>"
-}
-```
-
-The example illustrates the request format; the displayed slot may already be booked. Booking uses DynamoDB `PutItem` with `attribute_not_exists(booking_key)`, allowing one concurrent request to succeed and returning **HTTP 409** for competing requests to the same slot. Invalid inputs and unregistered patients are rejected.
-
-## Security measures
-
-- Restricted access through an SSH tunnel; Nginx listens on EC2 loopback HTTPS with a self-signed certificate.
-- Nginx Basic Authentication for the dashboard; bearer-token checks for protected scheduling API endpoints.
-- Dashboard and API Gunicorn processes bound to localhost.
-- EC2 IAM role grants scoped S3 read and DynamoDB read/write permissions.
-- Lambda execution role grants scoped S3 input read and processed-output write permissions; no DynamoDB access is claimed.
-- S3 processed outputs use SSE-S3 (`AES256`); DynamoDB uses AWS-managed at-rest encryption.
-- DynamoDB conditional writes protect against simultaneous double booking.
-- No real patient information is used. The system is an academic demonstration, **not a HIPAA-certified service**.
-
-## Deployment outline
-
-1. Generate the synthetic datasets using `scripts/generate_datasets.py` and upload the three inputs to the S3 bucket `medcare-m7-healthcare-data-habib` under `raw/`.
-2. Deploy `deployment/lambda/lambda_function.py` as the `MedCare-M7-Healthcare-ETL` function and run it with an S3-scoped execution role to create `processed/` objects.
-3. Create DynamoDB table `MedCare-M7-Appointments` with partition key `booking_key` (String).
-4. On an Ubuntu 24.04 EC2 instance, install Python dependencies, place the project at `/opt/medcare`, and configure the EC2 instance role for S3 reads and DynamoDB access.
-5. Run the Flask applications through separate Gunicorn/systemd services on `127.0.0.1:8000` and `127.0.0.1:8001`.
-6. Configure Nginx to reverse-proxy the dashboard and API, using localhost HTTPS, Basic Authentication and a self-signed localhost certificate. Keep authentication secrets out of source control.
-7. Use an SSH local port forward to access the restricted HTTPS endpoint and perform functional, authorization, concurrency and recovery tests.
-
-**Reproducibility note:** The source code is supplied, but production-style deployment requires the separately configured AWS resources, IAM policies, service definitions and Nginx settings. The self-signed certificate is appropriate only for the restricted academic test setup.
-
-## Verification results
+## Observed testing results
 
 | Test | Observed result |
 |---|---|
-| Dataset integration | 100 synthetic patients, 100 simulated vital readings, 30 consultation slots |
-| Appointment persistence | 27 available and 3 booked slots at final verification |
-| Concurrent booking | Five competing requests: one HTTP 201; four HTTP 409 |
-| Simulated workload | 30 requests, 10 workers, 30 successful, 0 failed (100% success) |
-| Workload latency | 2.215 seconds average; 7.750 seconds total |
-| Recovery | Services restarted successfully; three persisted bookings remained |
-| Dashboard summary | Final verification passed |
+| Data integration | 100 patients, 100 simulated vital readings, 30 consultation slots |
+| Final booking status | 27 available slots; 3 booked |
+| Competing bookings | Five simultaneous attempts: one `201`, four `409` |
+| Concurrent workload | 30 requests with 10 workers; 30 succeeded, 0 failed |
+| Average response latency | 2.215 seconds |
+| Total workload duration | 7.750 seconds |
+| Recovery test | Dashboard and API services restarted; 3 bookings remained persisted |
 
-The workload test demonstrates behavior under a **small simulated concurrent workload**; it does not establish AWS Auto Scaling, multi-AZ failover or production performance guarantees.
+The concurrent workload test exercised one EC2 instance; it did not test automatic infrastructure scaling. The service recovery test verified application restart and persistent DynamoDB state, not cross-zone failover.
 
-## Evidence gallery
+## Security and monitoring
 
-| Evidence | Description |
-|---|---|
-| [E01](docs/evidence/E01-Doctor-Scheduling-API-Test.png) | Doctor Scheduling API test |
-| [E02](docs/evidence/E02-Healthcare-Dashboard-Overview.png) | Dashboard overview |
-| [E03](docs/evidence/E03-Healthcare-Dashboard-Monitoring.png) | Dashboard monitoring |
-| [E04](docs/evidence/E04-S3-Healthcare-Bucket.png) | S3 bucket |
-| [E05](docs/evidence/E05-S3-Healthcare-Datasets.png) | S3 datasets |
-| [E06](docs/evidence/E06-Lambda-ETL-S3-Output.png) | Lambda ETL output |
-| [E07](docs/evidence/E07-HTTPS-Authentication-Security.png) | Restricted HTTPS and authentication |
-| [E08](docs/evidence/E08-DynamoDB-Appointment-Persistence.png) | DynamoDB booking persistence |
-| [E09](docs/evidence/E09-Scalability-Workload-Test.png) | Simulated concurrent workload |
-| [E10](docs/evidence/E10-Resilience-Recovery-Test.png) | Service recovery and persistence |
-| [E11](docs/evidence/E11-Final-Dashboard-Verification.png) | Final dashboard verification |
+Nginx is accessible only through loopback HTTPS and SSH port forwarding. Dashboard Basic Authentication and API bearer-token checks restrict access; DynamoDB conditional writes guard against conflicting bookings. S3 processed objects and DynamoDB records use encryption at rest, and AWS IAM scopes service permissions. The dashboard provides application-level monitoring; no dedicated CloudWatch dashboard is claimed.
 
-## Academic scope
+The deployment is an educational prototype using synthetic records and is **not** a HIPAA-certified healthcare service.
 
-This repository demonstrates secure cloud application integration, serverless ETL, simulated IoT data analytics, persistent appointment scheduling and documented functional testing. All patient records and vital readings are synthetic. No public-facing deployment, automatic scaling, multi-region redundancy or regulatory certification is claimed.
+## Costs and teardown
+
+Costs depend on EC2 uptime and storage, S3 objects and requests, Lambda usage, DynamoDB usage and network transfer. No project-specific monthly billing figure is claimed. Stop or delete unused AWS resources after collecting required evidence and completing submission to avoid ongoing charges. Do not assume that the resources have already been removed.
+
+## Assignment evidence and documentation
+
+- [Formatted Modular Assignment 7 report](docs/Healthcare%20Solution-M7-Report.docx)
+- [AWS architecture diagram](docs/architecture/MedCare-M7-Architecture.png)
+- [All 11 evidence screenshots](docs/evidence/)
+- [E01 — Doctor Scheduling API test](docs/evidence/E01-Doctor-Scheduling-API-Test.png)
+- [E02 — Healthcare dashboard overview](docs/evidence/E02-Healthcare-Dashboard-Overview.png)
+- [E03 — Healthcare dashboard monitoring](docs/evidence/E03-Healthcare-Dashboard-Monitoring.png)
+- [E04 — S3 healthcare bucket](docs/evidence/E04-S3-Healthcare-Bucket.png)
+- [E05 — S3 healthcare datasets](docs/evidence/E05-S3-Healthcare-Datasets.png)
+- [E06 — Lambda ETL output](docs/evidence/E06-Lambda-ETL-S3-Output.png)
+- [E07 — HTTPS authentication security](docs/evidence/E07-HTTPS-Authentication-Security.png)
+- [E08 — DynamoDB appointment persistence](docs/evidence/E08-DynamoDB-Appointment-Persistence.png)
+- [E09 — Scalability workload test](docs/evidence/E09-Scalability-Workload-Test.png)
+- [E10 — Resilience recovery test](docs/evidence/E10-Resilience-Recovery-Test.png)
+- [E11 — Final dashboard verification](docs/evidence/E11-Final-Dashboard-Verification.png)
+
+This repository documents a completed academic prototype, not a production-ready healthcare deployment.
