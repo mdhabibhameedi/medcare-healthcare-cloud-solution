@@ -1,0 +1,101 @@
+patient_id,age,gender,diagnosis,appointment_date
+P0001,58,Male,Hypertension,2026-11-24
+P0002,35,Male,Diabetes,2026-11-05
+P0003,65,Male,Routine Checkup,2026-11-03
+P0004,55,Female,Hypertension,2026-11-01
+P0005,23,Male,Diabetes,2026-11-17
+P0006,56,Male,Routine Checkup,2026-11-07
+P0007,63,Female,Diabetes,2026-11-15
+P0008,55,Female,Hypertension,2026-11-25
+P0009,69,Male,Migraine,2026-11-11
+P0010,35,Male,Diabetes,2026-11-25
+P0011,39,Male,Hypertension,2026-11-13
+P0012,24,Female,Asthma,2026-11-20
+P0013,34,Male,Migraine,2026-11-18
+P0014,25,Female,Hypertension,2026-11-18
+P0015,36,Female,Routine Checkup,2026-11-07
+P0016,63,Male,Hypertension,2026-11-22
+P0017,32,Female,Hypertension,2026-11-28
+P0018,32,Male,Migraine,2026-11-09
+P0019,47,Female,Diabetes,2026-11-12
+P0020,40,Male,Asthma,2026-11-23
+P0021,77,Male,Routine Checkup,2026-11-21
+P0022,28,Male,Diabetes,2026-11-15
+P0023,42,Female,Routine Checkup,2026-11-08
+P0024,61,Female,Hypertension,2026-11-08
+P0025,70,Male,Asthma,2026-11-13
+P0026,35,Male,Diabetes,2026-11-30
+P0027,78,Female,Diabetes,2026-11-21
+P0028,49,Female,Migraine,2026-11-05
+P0029,34,Male,Diabetes,2026-11-24
+P0030,53,Female,Routine Checkup,2026-11-14
+P0031,75,Female,Asthma,2026-11-08
+P0032,26,Female,Hypertension,2026-11-25
+P0033,21,Male,Diabetes,2026-11-21
+P0034,28,Female,Routine Checkup,2026-11-03
+P0035,42,Female,Routine Checkup,2026-11-15
+P0036,51,Female,Routine Checkup,2026-11-28
+P0037,78,Male,Hypertension,2026-11-22
+P0038,74,Female,Asthma,2026-11-04
+P0039,36,Female,Diabetes,2026-11-15
+P0040,18,Female,Routine Checkup,2026-11-25
+P0041,29,Male,Asthma,2026-11-27
+P0042,58,Male,Diabetes,2026-11-12
+P0043,66,Male,Routine Checkup,2026-11-25
+P0044,77,Male,Routine Checkup,2026-11-11
+P0045,49,Male,Hypertension,2026-11-30
+P0046,41,Female,Diabetes,2026-11-02
+P0047,33,Male,Hypertension,2026-11-24
+P0048,49,Male,Routine Checkup,2026-11-25
+P0049,26,Male,Migraine,2026-11-18
+P0050,28,Female,Routine Checkup,2026-11-28
+P0051,56,Female,Diabetes,2026-11-30
+P0052,52,Male,Asthma,2026-11-13
+P0053,60,Female,Migraine,2026-11-29
+P0054,51,Female,Hypertension,2026-11-08
+P0055,32,Male,Asthma,2026-11-01
+P0056,55,Male,Routine Checkup,2026-11-08
+P0057,18,Male,Hypertension,2026-11-08
+P0058,22,Male,Asthma,2026-11-03
+P0059,50,Male,Asthma,2026-11-22
+P0060,49,Male,Routine Checkup,2026-11-05
+P0061,64,Female,Diabetes,2026-11-26
+P0062,48,Female,Diabetes,2026-11-04
+P0063,24,Female,Asthma,2026-11-14
+P0064,44,Female,Hypertension,2026-11-22
+P0065,59,Male,Hypertension,2026-11-13
+P0066,64,Female,Hypertension,2026-11-08
+P0067,30,Male,Routine Checkup,2026-11-15
+P0068,26,Female,Diabetes,2026-11-09
+P0069,47,Male,Hypertension,2026-11-15
+P0070,69,Male,Hypertension,2026-11-21
+P0071,52,Male,Hypertension,2026-11-30
+P0072,66,Male,Diabetes,2026-11-14
+P0073,49,Female,Diabetes,2026-11-28
+P0074,43,Male,Diabetes,2026-11-13
+P0075,18,Female,Asthma,2026-11-30
+P0076,68,Female,Asthma,2026-11-14
+P0077,62,Female,Diabetes,2026-11-07
+P0078,36,Male,Hypertension,2026-11-19
+P0079,65,Male,Asthma,2026-11-02
+P0080,21,Female,Routine Checkup,2026-11-30
+P0081,72,Male,Hypertension,2026-11-17
+P0082,23,Male,Hypertension,2026-11-20
+P0083,22,Male,Migraine,2026-11-04
+P0084,78,Male,Routine Checkup,2026-11-20
+P0085,20,Male,Migraine,2026-11-22
+P0086,55,Female,Asthma,2026-11-07
+P0087,60,Female,Diabetes,2026-11-09
+P0088,43,Male,Asthma,2026-11-15
+P0089,38,Male,Hypertension,2026-11-15
+P0090,57,Male,Hypertension,2026-11-18
+P0091,31,Female,Diabetes,2026-11-30
+P0092,40,Male,Diabetes,2026-11-12
+P0093,36,Male,Migraine,2026-11-27
+P0094,52,Female,Routine Checkup,2026-11-26
+P0095,59,Male,Routine Checkup,2026-11-10
+P0096,77,Male,Diabetes,2026-11-09
+P0097,25,Male,Routine Checkup,2026-11-05
+P0098,35,Female,Routine Checkup,2026-11-07
+P0099,63,Female,Diabetes,2026-11-22
+P0100,58,Female,Routine Checkup,2026-11-16

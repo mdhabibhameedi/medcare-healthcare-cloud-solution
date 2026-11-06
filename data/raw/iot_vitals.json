@@ -1,0 +1,702 @@
+[
+  {
+    "patient_id": "P0001",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 65,
+    "blood_pressure": "116/63",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0002",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 62,
+    "blood_pressure": "127/77",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0003",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 100,
+    "blood_pressure": "121/68",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0004",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 95,
+    "blood_pressure": "110/88",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0005",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 60,
+    "blood_pressure": "127/95",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0006",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 94,
+    "blood_pressure": "104/69",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0007",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 69,
+    "blood_pressure": "123/95",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0008",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 79,
+    "blood_pressure": "108/62",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0009",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 73,
+    "blood_pressure": "102/82",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0010",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 82,
+    "blood_pressure": "115/66",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0011",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 99,
+    "blood_pressure": "135/86",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0012",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 70,
+    "blood_pressure": "109/75",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0013",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "111/86",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0014",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 102,
+    "blood_pressure": "121/86",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0015",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 70,
+    "blood_pressure": "115/77",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0016",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 84,
+    "blood_pressure": "144/66",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0017",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 74,
+    "blood_pressure": "102/90",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0018",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 79,
+    "blood_pressure": "129/82",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0019",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "114/74",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0020",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 81,
+    "blood_pressure": "112/85",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0021",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 82,
+    "blood_pressure": "104/77",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0022",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 103,
+    "blood_pressure": "132/85",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0023",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "134/81",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0024",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 97,
+    "blood_pressure": "116/71",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0025",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 98,
+    "blood_pressure": "102/66",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0026",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 87,
+    "blood_pressure": "122/80",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0027",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 84,
+    "blood_pressure": "132/67",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0028",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 62,
+    "blood_pressure": "112/76",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0029",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 93,
+    "blood_pressure": "127/60",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0030",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 83,
+    "blood_pressure": "134/72",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0031",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 99,
+    "blood_pressure": "104/81",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0032",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 79,
+    "blood_pressure": "142/67",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0033",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 80,
+    "blood_pressure": "119/86",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0034",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 95,
+    "blood_pressure": "144/78",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0035",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 102,
+    "blood_pressure": "112/86",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0036",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 99,
+    "blood_pressure": "143/71",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0037",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 95,
+    "blood_pressure": "119/85",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0038",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 78,
+    "blood_pressure": "100/79",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0039",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 89,
+    "blood_pressure": "127/80",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0040",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 92,
+    "blood_pressure": "128/73",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0041",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 78,
+    "blood_pressure": "110/65",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0042",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 65,
+    "blood_pressure": "142/81",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0043",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 74,
+    "blood_pressure": "115/79",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0044",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "112/69",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0045",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 99,
+    "blood_pressure": "115/90",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0046",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 86,
+    "blood_pressure": "104/89",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0047",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 105,
+    "blood_pressure": "136/72",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0048",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 85,
+    "blood_pressure": "124/91",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0049",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 66,
+    "blood_pressure": "109/60",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0050",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 71,
+    "blood_pressure": "127/74",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0051",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 89,
+    "blood_pressure": "144/93",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0052",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 67,
+    "blood_pressure": "135/75",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0053",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 102,
+    "blood_pressure": "108/89",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0054",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 88,
+    "blood_pressure": "135/80",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0055",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 95,
+    "blood_pressure": "132/87",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0056",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 88,
+    "blood_pressure": "110/90",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0057",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 93,
+    "blood_pressure": "115/77",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0058",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 77,
+    "blood_pressure": "140/75",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0059",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 75,
+    "blood_pressure": "104/78",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0060",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 94,
+    "blood_pressure": "121/80",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0061",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 74,
+    "blood_pressure": "108/69",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0062",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 105,
+    "blood_pressure": "144/69",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0063",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 86,
+    "blood_pressure": "104/86",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0064",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 86,
+    "blood_pressure": "134/89",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0065",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 84,
+    "blood_pressure": "113/86",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0066",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 96,
+    "blood_pressure": "137/61",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0067",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 82,
+    "blood_pressure": "130/60",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0068",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 94,
+    "blood_pressure": "124/86",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0069",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 91,
+    "blood_pressure": "134/74",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0070",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 91,
+    "blood_pressure": "117/87",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0071",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 102,
+    "blood_pressure": "124/81",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0072",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 89,
+    "blood_pressure": "125/70",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0073",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "139/94",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0074",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 65,
+    "blood_pressure": "137/61",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0075",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 89,
+    "blood_pressure": "127/68",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0076",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 84,
+    "blood_pressure": "103/76",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0077",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 80,
+    "blood_pressure": "113/89",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0078",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 86,
+    "blood_pressure": "124/77",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0079",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 61,
+    "blood_pressure": "105/90",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0080",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 82,
+    "blood_pressure": "134/63",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0081",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 101,
+    "blood_pressure": "141/64",
+    "oxygen_level": 94
+  },
+  {
+    "patient_id": "P0082",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 72,
+    "blood_pressure": "101/75",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0083",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 75,
+    "blood_pressure": "101/69",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0084",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 96,
+    "blood_pressure": "130/67",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0085",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 83,
+    "blood_pressure": "129/76",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0086",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 70,
+    "blood_pressure": "138/67",
+    "oxygen_level": 96
+  },
+  {
+    "patient_id": "P0087",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 79,
+    "blood_pressure": "106/61",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0088",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 85,
+    "blood_pressure": "143/84",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0089",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 97,
+    "blood_pressure": "112/64",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0090",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 66,
+    "blood_pressure": "140/75",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0091",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 96,
+    "blood_pressure": "119/67",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0092",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 94,
+    "blood_pressure": "102/82",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0093",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 64,
+    "blood_pressure": "142/83",
+    "oxygen_level": 98
+  },
+  {
+    "patient_id": "P0094",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 60,
+    "blood_pressure": "141/81",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0095",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 66,
+    "blood_pressure": "126/91",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0096",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 105,
+    "blood_pressure": "123/89",
+    "oxygen_level": 95
+  },
+  {
+    "patient_id": "P0097",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 93,
+    "blood_pressure": "127/71",
+    "oxygen_level": 99
+  },
+  {
+    "patient_id": "P0098",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 90,
+    "blood_pressure": "117/94",
+    "oxygen_level": 97
+  },
+  {
+    "patient_id": "P0099",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 80,
+    "blood_pressure": "127/77",
+    "oxygen_level": 100
+  },
+  {
+    "patient_id": "P0100",
+    "timestamp": "2026-11-03T09:03:24",
+    "heart_rate": 77,
+    "blood_pressure": "115/65",
+    "oxygen_level": 97
+  }
+]

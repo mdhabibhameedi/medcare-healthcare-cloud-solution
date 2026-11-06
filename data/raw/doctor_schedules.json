@@ -1,0 +1,183 @@
+[
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-10T09:00:00",
+    "available": false,
+    "patient_id": "P0001"
+  },
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-10T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-11T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-11T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-12T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D001",
+    "specialty": "Cardiology",
+    "slot": "2026-11-12T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-10T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-10T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-11T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-11T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-12T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D002",
+    "specialty": "General Medicine",
+    "slot": "2026-11-12T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-10T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-10T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-11T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-11T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-12T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D003",
+    "specialty": "Pulmonology",
+    "slot": "2026-11-12T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-10T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-10T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-11T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-11T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-12T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D004",
+    "specialty": "Neurology",
+    "slot": "2026-11-12T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-10T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-10T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-11T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-11T11:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-12T09:00:00",
+    "available": true
+  },
+  {
+    "doctor_id": "D005",
+    "specialty": "Endocrinology",
+    "slot": "2026-11-12T11:00:00",
+    "available": true
+  }
+]
